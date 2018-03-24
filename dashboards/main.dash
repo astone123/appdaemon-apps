@@ -1,0 +1,105 @@
+##
+## Main arguments, all optional
+##
+title: Main Panel
+widget_dimensions: [120, 120]
+columns: 5
+
+clock:
+    widget_type: clock
+
+weather:
+    widget_type: weather
+    units: "&deg;F"
+
+adam_presence:
+    widget_type: device_tracker
+    title: Adam
+    device: adam
+
+dave_presence:
+    widget_type: device_tracker
+    widget_style: "color: red"
+    title: Dave
+    device: dave
+
+wes_presence:
+    widget_type: device_tracker
+    title: Wes
+    device: wes
+
+bradley_presence:
+    widget_type: device_tracker
+    title: Bradley
+    device: bradley
+
+ryan_presence:
+    widget_type: device_tracker
+    title: Ryan
+    device: ryan
+
+box_fan:
+    widget_type: switch
+    title: Box Fan
+    entity: switch.box_fan
+    icon_on: fa-snowflake-o
+    icon_off: fa-snowflake-o
+
+foyer:
+    widget_type: switch
+    title: Foyer Lights
+    entity: switch.foyer_light
+    icon_on: fa-lightbulb-o
+    icon_off: fa-lightbulb-o
+
+adams_tv:
+    widget_type: media_player
+    title: Adam's TV
+    entity: media_player.adams_tv
+
+christmas_tree:
+    widget_type: switch
+    title: Christmas Tree
+    entity: switch.christmas_tree
+    icon_on: fa-tree
+    icon-off: fa-tree
+
+christmas_lights:
+    widget_type: switch
+    title: Christmas Lights
+    entity: switch.christmas_lights
+    icon_on: fa-star
+    icon-off: fa-star
+
+upstairs_climate:
+    widget_type: climate
+    title: Upstairs
+    entity: climate.upstairs
+
+downstairs_climate:
+    widget_type: climate
+    title: Downstairs
+    entity: climate.downstairs
+
+front_door:
+    widget_type: binary_sensor
+    title: Front Door
+    entity: binary_sensor.door_window_sensor_158d0001a20d43
+
+sliding_door:
+    widget_type: binary_sensor
+    title: Sliding Door
+    entity: binary_sensor.door_window_sensor_158d0001d685be
+
+iss:
+    widget_type: binary_sensor
+    title: ISS
+    entity: binary_sensor.iss
+
+layout:
+    - adam_presence(1x1), dave_presence(1x1), wes_presence(1x1), ryan_presence(1x1), bradley_presence(1x1)
+    - clock(5x1)
+    - weather(5x1)
+    - 
+    - upstairs_climate(2x1), downstairs_climate(2x1), iss(1x1)
+    - front_door(1x1), sliding_door(1x1)

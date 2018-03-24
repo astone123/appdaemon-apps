@@ -1,0 +1,43 @@
+title: Adam's Room
+widget_dimensions: [120, 115]
+columns: 5
+
+clock:
+    widget_type: clock
+
+box_fan:
+    widget_type: switch
+    title: Box Fan
+    entity: switch.box_fan
+    icon_on: fa-snowflake-o
+    icon_off: fa-snowflake-o
+
+adams_tv:
+    widget_type: media_player
+    title: TV Cast
+    entity: media_player.adams_tv
+
+upstairs_climate:
+    widget_type: climate
+    title: Upstairs
+    entity: climate.upstairs
+
+upstairs_bathroom:
+    widget_type: binary_sensor
+    title: Upstairs Bathroom
+    entity: binary_sensor.door_window_sensor_158d0001c1ce42
+
+downstairs_bathroom:
+    widget_type: binary_sensor
+    title: Downstairs Bathroom
+    entity: binary_sensor.door_window_sensor_158d0001ab59ea
+
+lights:
+    widget_type: light
+    title: Lights
+    entity: light.adams_room
+
+layout:
+    - upstairs_bathroom(1x1), downstairs_bathroom(1x1), lights(1x1), light.tv_leds, light.wall
+    - clock(2x1), adams_tv(3x1)
+    - upstairs_climate(1x1), box_fan(1x1)
