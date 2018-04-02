@@ -1,4 +1,4 @@
-import appdaemon.appapi as appapi
+import appdaemon.plugins.hass.hassapi as hass
 import sys
 
 if sys.version_info < (3, 0):
@@ -11,7 +11,7 @@ import io
 from colorthief import ColorThief
  
 # This script controls an RGB light entity color based on the photo attribute of a media player entity
-class music_lights(appapi.AppDaemon):
+class music_lights(hass.Hass):
  
   def initialize(self): 
     self.listen_state(self.change_led_color, self.args["media_player"], attribute = self.args["photo_attribute"])

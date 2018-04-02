@@ -1,12 +1,10 @@
-AppDaemon:
-  logfile: STDOUT
-  errorfile: STDERR
-  logsize: 100000
-  log_generations: 3
+appdaemon:
+  api_port: !secret api_port
   threads: 10
-  disable_apps: 0
-HASS:
-  ha_url: !secret ha_url
-  ha_key: !secret ha_key
-HADashboard:
+  plugins:
+    HASS:
+      type: hass
+      ha_key: !secret ha_key
+      ha_url: !secret ha_url
+hadashboard:
   dash_url: !secret dash_url
