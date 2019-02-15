@@ -5,8 +5,4 @@ music_lights:
   ha_url: !secret ha_url
   media_player: "media_player.adams_tv"
   photo_attribute: "entity_picture"
-  light: "light.tv_leds"
-
-# spotify_recently_added:
-#   module: spotify_recently_added
-#   class: spotify_recently_added
+  light: "light.yeelight_strip_7811dc66e295"

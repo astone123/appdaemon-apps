@@ -9,35 +9,36 @@ box_fan:
     widget_type: switch
     title: Box Fan
     entity: switch.box_fan
-    icon_on: fa-snowflake-o
-    icon_off: fa-snowflake-o
+    icon_on: fa-snowflake
+    icon_off: fa-snowflake
 
 adams_tv:
     widget_type: media_player
-    title: TV Cast
+    title: TV
     entity: media_player.adams_tv
 
-upstairs_climate:
-    widget_type: climate
-    title: Upstairs
-    entity: climate.upstairs
-
-upstairs_bathroom:
+front_door:
     widget_type: binary_sensor
-    title: Upstairs Bathroom
-    entity: binary_sensor.door_window_sensor_158d0001c1ce42
+    title: Front Door
+    entity: binary_sensor.front_door
 
-downstairs_bathroom:
+back_door:
     widget_type: binary_sensor
-    title: Downstairs Bathroom
-    entity: binary_sensor.door_window_sensor_158d0001ab59ea
+    title: Back Door
+    entity: binary_sensor.back_door
 
 lights:
     widget_type: light
     title: Lights
     entity: light.adams_room
 
+room_temperature:
+    widget_type: sensor
+    title: Temperature
+    units: "&deg;F"
+    entity: sensor.adam_s_room_real_feel
+
 layout:
-    - upstairs_bathroom(1x1), downstairs_bathroom(1x1), lights(1x1), light.tv_leds, light.wall
+    - front_door(1x1), back_door(1x1), lights(1x1), light.yeelight_strip_7811dc66e295, light.nanoleaf_aurora_51_b0_97_local
     - clock(2x1), adams_tv(3x1)
-    - upstairs_climate(1x1), box_fan(1x1)
+    - room_temperature(1x1), box_fan(1x1)
